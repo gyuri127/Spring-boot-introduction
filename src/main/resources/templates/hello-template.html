@@ -1,0 +1,10 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<body>
+<p th:text="'hello ' + ${name}">hello! empty</p>
+</body>
+</html>
+
+<!-- 템플릿엔진 동작하면 hello+{name}부분으로 hello!empty 가 치환됨
+따라서 지워도 됨
+서버 전에 값 적어서 보려면 씀
+-->
