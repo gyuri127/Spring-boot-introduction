@@ -8,7 +8,7 @@ public class MemoryMemberRepository implements MemberRepository{
 
     //저장
     private  static Map<Long,Member> store = new HashMap<>();
-    private static long sequence = 0L;  //키값 생성 -> 동시성 위해, 단순하게 한것임
+    private static long sequence = 0L;  //키값 생성하는것임 -> 동시성 위해, 단순하게 한것임
     @Override
     public Member save(Member member) {
         member.setId(++sequence);
@@ -32,7 +32,7 @@ public class MemoryMemberRepository implements MemberRepository{
     @Override
     public List<Member> findAll() {
         return new ArrayList<>(store.values());
-    }
+    }//loop돌리기편해서 List자주씀
 
     //test를 위해
     public void clearStore(){
